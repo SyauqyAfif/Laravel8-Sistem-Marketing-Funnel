@@ -107,13 +107,8 @@
                                         <a href="{{ route( 'marketing' ) }}"><span class="sub-item">Data Marketing Funnel</span></a>
                                     </li>
 
-
                                     <li>
-                                        <a href="{{ route( 'data_afiliasi' ) }}"><span class="sub-item">Data Afiliasi | DATA ENGAGEMENT</span></a>
-                                    </li>
-
-                                    <li>
-                                        <a href="{{ route( 'fee' ) }}"><span class="sub-item">Data Fee</span></a>
+                                        <a href="{{ route( 'grafik' ) }}"><span class="sub-item">Grafik</span></a>
                                     </li>
                                 </ul>
                             </div>

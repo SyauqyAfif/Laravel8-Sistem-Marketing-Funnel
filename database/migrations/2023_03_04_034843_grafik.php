@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DataAfiliasi extends Migration
+class Grafik extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class DataAfiliasi extends Migration
      */
     public function up()
     {
-        Schema::create('data_afiliasi', function (Blueprint $table) {
+        Schema::create('grafik', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_afiliasi');
-            $table->string('no_telp');
-            $table->string('alamat');
-            $table->string('email')->unique();
+            $table->string('nama_content');
+            $table->string('level_content');
+            $table->string('like');
+            $table->string('view');
+            $table->string('comment');
             $table->date('tanggal');
             $table->timestamps();
         });
@@ -31,6 +32,6 @@ class DataAfiliasi extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('data_afiliasi');
+        Schema::dropIfExists('grafik');
     }
 }

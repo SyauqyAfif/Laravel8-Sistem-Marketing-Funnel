@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Afiliasi;
+use App\Models\Grafik;
 use PDF;
 use Illuminate\Http\Request;
 
@@ -15,14 +15,14 @@ class LaporanController extends Controller
      */
     public function cetak_laporan()
     {
-        $afiliasi = Afiliasi::all();
-        return view('cetak.cetak_laporan', compact('afiliasi'));
+        $grafik = Grafik::all();
+        return view('cetak.cetak_laporan', compact('grafik'));
     }
 
     public function cetaklaporan($dari, $sampai)
     {
         // dd($dari,$sampai);
-        $laporan = Afiliasi::whereBetween('tanggal', [$dari, $sampai])->get();
+        $laporan = Grafik::whereBetween('tanggal', [$dari, $sampai])->get();
 
         // dd($laporan);
         // $custume = array(0,0,800,800);
@@ -36,10 +36,10 @@ class LaporanController extends Controller
         $awal = $request->tgl_awal;
         $akhir = $request->tgl_akhir;
 
-        $afiliasi =  Afiliasi::whereBetween('created_at', [$awal, $akhir])->get();
+        $grafik =  Grafik::whereBetween('created_at', [$awal, $akhir])->get();
 
         // dd($notaris);
-        return view('cetak.filter', compact('afiliasi', 'awal', 'akhir'));
+        return view('cetak.filter', compact('grafik', 'awal', 'akhir'));
     }
     /**
      * Show the form for creating a new resource.
